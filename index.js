@@ -22,11 +22,20 @@ let persons = [
         name : "Mohamed Nasser",
         number : '01149707289',
         id : 3
-    },
-    {
+    },{
         name: "Hamza Nasser",
         number : '0105060728292',
-        id : 5
+        id : 4
+    },
+    {
+        name: "Franz Bonaparta",
+        number: "01127341338",
+        id: 5
+    },
+    {
+        name: "Sayed Atwa",
+        number: "01149707289",
+        id: 6
     }
 ]
 
@@ -69,6 +78,10 @@ app.delete('/api/persons/:id',(req,res)=>{
 
 
 app.post('/api/persons',(req,res)=>{
+    const generateId=()=>{
+        const maxId = Math.max(...persons.map(person=> person.id))
+        return maxId+1
+    }
     const sentPerson = req.body
     if (!sentPerson.name){
        return res.status(400).json({error : "You must provide a name for the new contact"})
@@ -83,7 +96,7 @@ app.post('/api/persons',(req,res)=>{
     const newPerson = {
         name : sentPerson.name,
         number : sentPerson.number,
-        id : Math.floor((Math.random() *1000)+1)
+        id : generateId()
     }
     persons = persons.concat(newPerson)
     res.json(newPerson)
