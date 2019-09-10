@@ -24,10 +24,6 @@ let persons = [
         id : 3
     },
     {
-        name : "Salma Hesham",
-        number : "01127341338",
-        id : 4
-    },{
         name: "Hamza Nasser",
         number : '0105060728292',
         id : 5
