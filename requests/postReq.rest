@@ -1,7 +1,7 @@
-POST https://phonebook-nasser.herokuapp.com/api/persons
+POST https://localhost:3001/api/persons
 Content-Type: application/json
 
 {
-    "name" : "Sayed",
-    "number" : "0144545"
+    "name" : "Walaa",
+    "number" : "22545"
 }
